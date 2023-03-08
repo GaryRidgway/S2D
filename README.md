@@ -3,12 +3,19 @@ This tool is meant to provide a two dimensional slider that will always return a
 
 Additionally, different handles can be linked, allowing their bounds to be modified by the linked handles' position.
 
-## Minified
-### JavaScript
-<pre>
-<script src="https://cdn.jsdelivr.net/gh/GaryRidgway/S2D/dist/js/S2D.min.js"></script>
-</pre>
+## Choose one of these and add it at the end of your  `<body>`  tag:
+### Minified JavaScript
+```
+    <script src="https://cdn.jsdelivr.net/gh/GaryRidgway/S2D/dist/js/S2D.min.js"></script>
+```
+
+### Un-minified JavaScript
+```
+    <script src="https://cdn.jsdelivr.net/gh/GaryRidgway/S2D/src/js/S2D.js"></script>
+```
+
+## And also paste this in to your  `<head>`  tag:"
 ### CSS
-<pre>
-<link rel="StyleSheet" href="https://cdn.jsdelivr.net/gh/GaryRidgway/S2D/dist/css/S2D.css" type="text/css" />
-</pre>
+```
+    <lidk rel="StyleSheet" href="https://cdn.jsdelivr.net/gh/GaryRidgway/S2D/dist/css/S2D.css" type="text/css"/>
+```
