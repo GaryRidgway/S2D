@@ -1,0 +1,20 @@
+{
+  "name": "s2d",
+  "version": "1.0.0",
+  "description": "This tool is meant to provide a two dimensional slider that will always return a value between 0% and 100% on either the x or y axis for each handle. This allows you to multiply any range you want by the output, thus having a completely resizable input element without any rounding or pixel size errors.",
+  "main": ", allowing their bounds to be modified by the linked handles' position.",
+  "scripts": {
+    "compile:sass": "node-sass ./src/scss/ -o ./dist/css",
+    "minify:jsf": "uglifyjs-folder ./src/js/ -eo ./dist/js",
+    "build": "npm run compile:sass & npm run minify:jsf",
+    "watch": "node server.js"
+  },
+  "author": "Alan Way",
+  "license": "MIT",
+  "devDependencies": {
+    "chokidar": "^3.5.3",
+    "fs-extra": "^11.1.0",
+    "node-sass": "^8.0.0",
+    "uglifyjs-folder": "^3.2.0"
+  }
+}

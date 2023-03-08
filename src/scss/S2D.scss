@@ -1,0 +1,63 @@
+[id*="slider-2D-"] {
+    background: #efefef;
+    position: relative;
+  
+    [id*="grapple-point"] {
+      height: 0px;
+      width: 0px;
+      cursor: move;
+    }
+  
+    .svg-container {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden; 
+    }
+  
+    .svg-container [slider-link] {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+  
+    .grapple-handle {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      background-color: #0075ff;
+      border-radius: 50%;
+  
+      &:hover {
+        background-color: #0066df;
+      }
+    }
+  
+    .grapple-point-slider {
+      background: #4c5064;
+      border: 3px dashed transparent;
+    } 
+  
+    .grapple-point-vertical-slider {
+      width: 100%;
+      min-height: 0px;
+      position: absolute;
+      left: 0px;
+      top: -2px;
+      cursor: row-resize;
+      border-left: none;
+      border-right: none;
+    }
+  
+    .grapple-point-horizontal-slider {
+      height: 100%;
+      min-width: 0px;
+      position: absolute;
+      left: -2px;
+      top: 0px;
+      cursor: col-resize;
+      border-top: none;
+      border-bottom: none;
+    }
+  }

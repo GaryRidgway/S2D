@@ -1,0 +1,29 @@
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js" integrity="sha512-bgHRAiTjGrzHzLyKOnpFvaEpGzJet3z4tZnXGjpsCcqOnAH6VGUx9frc5bcIhKTVLEiCO6vEhNAgx5jtLUYrfA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<label id="label-default-styles" for="default-styles"> sHoW fAncy styles</label>
+<input type="checkbox" id="default-styles" name="Handle links" checked>
+
+<label id="label-show-handle-links" for="show-handle-links"> sHoW hAndle links</label>
+<input type="checkbox" id="show-handle-links" name="Handle links" checked>
+
+<label id="label-show-extra-handles" for="show-extra-handles"> sHoW extrA hAndles</label>
+<input type="checkbox" id="show-extra-handles" name="Extra handles">
+
+<div id="slider-2D-0">
+  <div id="grapple-point-0"></div>
+  <div id="grapple-point-1"></div>
+  <div id="grapple-point-2"></div>
+</div>
+
+<div class="display">
+  <button onClick="getSliderValues()">
+    Get values
+  </button>
+  <p>This tool is meant to provide a two dimensional slider that will always return a value between 0% and 100% on either the x or y axis for each handle. This allows you to multiply any range you want by the output, thus having a completely resizable input element without any rounding or pixel size errors.</p>
+  <p>Additionally, different handles can be linked, allowing their bounds to be modified by the linked handles' position.</p>
+</div>
