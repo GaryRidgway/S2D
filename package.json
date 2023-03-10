@@ -5,7 +5,8 @@
   "main": ", allowing their bounds to be modified by the linked handles' position.",
   "scripts": {
     "compile:sass": "node-sass ./src/scss/ -o ./dist/css",
-    "minify:jsf": "uglifyjs-folder ./src/js/ -eo ./dist/js",
+    "minify:jsf": "jsdoc ./src/js/*.js & uglifyjs-folder ./src/js/ -eo ./dist/js",
+    "jsdoc": "./node_modules/.bin/jsdoc",
     "build": "npm run compile:sass & npm run minify:jsf",
     "watch": "npm run build && node server.js"
   },
@@ -14,6 +15,7 @@
   "devDependencies": {
     "chokidar": "^3.5.3",
     "fs-extra": "^11.1.0",
+    "jsdoc": "^4.0.2",
     "node-sass": "^8.0.0",
     "uglifyjs-folder": "^3.2.0"
   }

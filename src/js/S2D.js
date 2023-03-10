@@ -1,5 +1,14 @@
 // TODO: Comment functions.
-
+/**
+ * 
+ * The Slider 2D class allows you to initialize a 
+ * handle inside a "slider-2D-<i>X</i>" Element. 
+ * This will then be able to be queried for its 
+ * values within the two-dimensional space of the 
+ * slider. 
+ * 
+ * @param {Element} S2Dpoint A handle Element inside a "slider-2D-<i>X</i>" element.
+ */
 function S2D(S2Dpoint) {
     //---VARIABLE INITIALIZATION---///
     const isConfigObject =
@@ -39,14 +48,46 @@ function S2D(S2Dpoint) {
   
     //---PUBLIC FUNCTIONS---///
   
+    /**
+     * 
+     * The handle identifier can be 't', 'b', 'l', or 
+     * 'r', and will clear the inner HTML of the top, 
+     * bottom, left, or right handles respectively.
+     * 
+     * @param {String} handleIdentifier 't', 'b', 'l', or 'r'
+     * 
+     * @returns {String}
+     */
     this.clearHandleHTML = function (handleIdentifier) {
       this.setHandleInnerHTML(handleIdentifier, "");
     };
   
+    /**
+     * This function takes in a <i>float</i> and 
+     * rounds it to <i>places</i>, but explicitly 
+     * returns a string that will always have exactly 
+     * the number of <i>places</i> digits after the 
+     * decimal point.
+     * <br>
+     * Ex: 1.1 => '1.100'
+     * 
+     * @param {Float} float 
+     * @param {number} places Defaults to 3. Must be an integer.
+     * 
+     * @returns {String}
+     */
     this.fswep = function (float, places = 3) {
       return fswep(float, places);
     };
   
+    /**
+     * This function gets the defined ranges for the S2D 
+     * instance, with '<i>h</i>' and '<i>v</i>' 
+     * representing the horizontal and vertical ranges 
+     * respectively. If no ranges have been defined, 
+     * '<i>h</i>' and '<i>v</i>' will be null.
+     * @returns {Object}
+     */
     this.getRanges = function () {
       if (
         typeof this.horizontalRange.low !== "object" &&
@@ -65,7 +106,18 @@ function S2D(S2Dpoint) {
         };
       }
     };
-  
+
+    /**
+     * This function will return the '<i>h</i>' (Horizontal) 
+     * and '<i>v</i>' (Vertical) values of the handle respective 
+     * to its "slider-2D-<i>X</i>" container. If no ranges 
+     * have previously been defined with {@link setRanges}, 
+     * or if <i>percent</i> is <i>true</i>, then this will 
+     * return the percentage value of its positions instead.
+     * 
+     * @param {Boolean} percent Set to <i>true</i> if you want the values returned as percentages.
+     * @returns {Object}
+     */
     this.getValues = function (percent = false) {
       const ranges = this.getRanges();
       const slider = point.parentElement;
@@ -151,77 +203,82 @@ function S2D(S2Dpoint) {
       };
     };
   
-    /*
-     * This function sets the vertical and horizontal ranges of the slider.
+    /**
+     * This function sets the vertical and horizontal ranges of the slider. The handle will then map its percent position to the ranges provided to give the proper return values when {@link getValues} is called.
+     * <br>
      * It can take One, Two, or Six arguments.
+     * <br><br>
+     * The Suffixes passed in for any of the following options can be any string. It will be returned with the values of the handle when {@link getValues} is called.
      *
-     *
-     * One argument:
-     *    This must be an entire object that defines
-     *    the high, low, and suffixes for both the horizontal
+     * @example
+     * <caption>
+     * One argument: <br>
+     *    &emsp; This must be an entire object that defines the high, low, and suffixes for both the horizontal
      *    and the vertical ranges.
+     * </caption>
      *
      *    Ex:
-     *      ONE:
+     *      Arg_1:
      *        {
      *          h: {
-     *            low: NUMBER,
-     *            high: NUMBER,
-     *            suffix: STRING
+     *            low: {Number},
+     *            high: {Number},
+     *            suffix: {String}
      *          },
      *          v: {
-     *            low: NUMBER,
-     *            high: NUMBER,
-     *            suffix: STRING
+     *            low: {Number},
+     *            high: {Number},
+     *            suffix: {String}
      *          },
      *        }
      *
-     *      Example call:
-     *        S2DInstance.seRanges(ONE);
+     *      // Example call:
+     *      S2DInstance.seRanges(Arg_1);
      *
-     *
-     * Two arguments:
-     *    This must be two objects that define the
-     *    horizontal and vertical ranges with suffixes.
-     *
-     *    Ex:
-     *      ONE: // The Horizontal range.
-     *        {
-     *          low: NUMBER,
-     *          high: NUMBER,
-     *          suffix: STRING
-     *        }
-     *      TWO: // The Vertical range.
-     *        {
-     *          low: NUMBER,
-     *          high: NUMBER,
-     *          suffix: STRING
-     *        }
-     *
-     *      Example call:
-     *        S2DInstance.seRanges(ONE, TWO);
-     *
-     *
-     * Four arguments:
-     *    This must be the low and high values of the
-     *    horizontal and vertical ranges respectively.
+     * @example
+     * <caption>
+     * Two arguments: <br>
+     *    &emsp; This must be two objects that define the horizontal and vertical ranges with suffixes.
+     * </caption>
      *
      *    Ex:
-     *      ONE:   // The Horizontal low.
-     *        NUMBER
-     *      TWO:   // The Horizontal high.
-     *        NUMBER
-     *      THREE: // The Horizontal suffix.
-     *        NUMBER
-     *      FOUR:  // The Vertical low.
-     *        NUMBER
-     *      FIVE:  // The Vertical high.
-     *        NUMBER
-     *      SIX:   // The Vertical suffix.
-     *        NUMBER
+     *      Arg_1: // The Horizontal range.
+     *        {
+     *          low: {Number},
+     *          high: {Number},
+     *          suffix: {String}
+     *        }
+     *      Arg_2: // The Vertical range.
+     *        {
+     *          low: {Number},
+     *          high: {Number},
+     *          suffix: {String}
+     *        }
      *
-     *      Example call:
-     *        S2DInstance.seRanges(ONE, TWO, THREE, FOUR, FIVE, SIX);
+     *      // Example call:
+     *      S2DInstance.seRanges(Arg_1, Arg_2);
+     *
+     * @example
+     * <caption>
+     * Six arguments: <br>
+     *    &emsp; This must be the low and high values of the horizontal and vertical ranges respectively.
+     * </caption>
+     *    Ex:
+     *      Arg_1:   // The Horizontal low.
+     *        {Number}
+     *      Arg_2:   // The Horizontal high.
+     *        {Number}
+     *      Arg_3: // The Horizontal suffix.
+     *        {String}
+     *      Arg_4:  // The Vertical low.
+     *        {Number}
+     *      Arg_5:  // The Vertical high.
+     *        {Number}
+     *      Arg_6:   // The Vertical suffix.
+     *        {String}
+     *
+     *      // Example call:
+     *      S2DInstance.seRanges(Arg_1, Arg_2, Arg_3, Arg_4, Arg_5, Arg_6);
      */
     this.setRanges = function () {
       switch (arguments.length) {
