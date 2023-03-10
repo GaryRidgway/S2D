@@ -1,11 +1,15 @@
 // TODO: Comment functions.
 /**
+ * <h3>Slider 2D</h3>
  * 
+ * @name S2D
+ * @class
+ * @classdesc
  * The Slider 2D class allows you to initialize a 
  * handle inside a "slider-2D-<i>X</i>" Element. 
  * This will then be able to be queried for its 
  * values within the two-dimensional space of the 
- * slider. 
+ * slider.
  * 
  * @param {Element} S2Dpoint A handle Element inside a "slider-2D-<i>X</i>" element.
  */
@@ -49,11 +53,13 @@ function S2D(S2Dpoint) {
     //---PUBLIC FUNCTIONS---///
   
     /**
+     * <h4>Clear handle HTML.</h4>
      * 
      * The handle identifier can be 't', 'b', 'l', or 
      * 'r', and will clear the inner HTML of the top, 
      * bottom, left, or right handles respectively.
      * 
+     * @method
      * @param {String} handleIdentifier 't', 'b', 'l', or 'r'
      * 
      * @returns {String}
@@ -63,14 +69,17 @@ function S2D(S2Dpoint) {
     };
   
     /**
-     * This function takes in a <i>float</i> and 
+     * <h4>Float to string with explicit places.</h4>
+     * 
+     * This function takes in a <i>float</i>&nbsp; and 
      * rounds it to <i>places</i>, but explicitly 
      * returns a string that will always have exactly 
-     * the number of <i>places</i> digits after the 
+     * the number of <i>places</i>&nbsp; digits after the 
      * decimal point.
      * <br>
      * Ex: 1.1 => '1.100'
      * 
+     * @method
      * @param {Float} float 
      * @param {number} places Defaults to 3. Must be an integer.
      * 
@@ -81,11 +90,16 @@ function S2D(S2Dpoint) {
     };
   
     /**
+     * <h4>Get ranges.</h4>
+     * 
      * This function gets the defined ranges for the S2D 
-     * instance, with '<i>h</i>' and '<i>v</i>' 
+     * instance, with <i>h</i>&nbsp; and <i>v</i>&nbsp; 
      * representing the horizontal and vertical ranges 
      * respectively. If no ranges have been defined, 
-     * '<i>h</i>' and '<i>v</i>' will be null.
+     * <i>h</i>&nbsp; and <i>v</i>&nbsp; will be null.
+     * 
+     * @method
+     * 
      * @returns {Object}
      */
     this.getRanges = function () {
@@ -108,14 +122,18 @@ function S2D(S2Dpoint) {
     };
 
     /**
-     * This function will return the '<i>h</i>' (Horizontal) 
-     * and '<i>v</i>' (Vertical) values of the handle respective 
+     * <h4>Get values.</h4>
+     * 
+     * This function will return the <i>h</i>&nbsp; (Horizontal) 
+     * and <i>v</i>&nbsp; (Vertical) values of the handle respective 
      * to its "slider-2D-<i>X</i>" container. If no ranges 
      * have previously been defined with {@link setRanges}, 
-     * or if <i>percent</i> is <i>true</i>, then this will 
+     * or if <i>percent</i>&nbsp; is <i>true</i>, then this will 
      * return the percentage value of its positions instead.
      * 
-     * @param {Boolean} percent Set to <i>true</i> if you want the values returned as percentages.
+     * @method
+     * @param {Boolean} percent Set to <i>true</i>&nbsp; if you want 
+     * the values returned as percentages.
      * @returns {Object}
      */
     this.getValues = function (percent = false) {
@@ -158,14 +176,42 @@ function S2D(S2Dpoint) {
       };
     };
   
+    /**
+     * <h4>Move to.</h4>
+     * This function takes in an Object with <i>x</i> and <i>y</i>
+     * &nbsp; values in percentages.
+     * 
+     * @method
+     * @param {Object} position An object with an <i>x</i>&nbsp; 
+     * and <i>y</i>&nbsp; position.
+     */
     this.moveTo = function (position) {
       doMouseDown(null, null, position);
     };
   
+    /**
+     * <h4>Round to places.</h4>
+     * 
+     * This function takes in a <i>float</i> and rounds it to <places>.
+     * 
+     * @method
+     * @param {Number} float Needs to be a float.
+     * @param {Number} places Needs to be an integer, defaults to 3.
+     */
     this.rtp = function (float, places = 3) {
       rtp(float, places);
     };
   
+    /**
+     * <h4>Set handle inner HTML.</h4>
+     * 
+     * Sets the inner HTML of a handle. This is useful to create 
+     * custom handle elements that can be styled independently.
+     * 
+     * @method
+     * @param {String} handleIdentifier 't', 'b', 'l', or 'r'.
+     * @param {String} newHTML HTML to be placed inside a handle.
+     */
     this.setHandleInnerHTML = function (handleIdentifier, newHTML) {
       handlesSwitch(handleIdentifier, "", function (element) {
         element.innerHTML = newHTML;
@@ -173,6 +219,19 @@ function S2D(S2Dpoint) {
       initTransformstyles();
     };
   
+    /**
+     * <h4>Set horizontal range.</h4>
+     * 
+     * This function sets the horizontal range 
+     * of the slider. The handle will then map its percent 
+     * position to the horizontal range provided to give the proper 
+     * horizontal return values when {@link getValues} is called.
+     * 
+     * @method
+     * @param {Number} low The low of the range.
+     * @param {Number} high The high of the range.
+     * @param {String} suffix The suffix of the ranges value.
+     */
     this.setHorizontalRange = function (low, high, suffix) {
       this.horizontalRange = {
         low: low,
@@ -195,6 +254,19 @@ function S2D(S2Dpoint) {
       runOnce ? onMoveFn() : "";
     };
   
+    /**
+     * <h4>Set vertical range.</h4>
+     * 
+     * This function sets the vertical range 
+     * of the slider. The handle will then map its percent 
+     * position to the vertical range provided to give the proper 
+     * vertical return values when {@link getValues} is called.
+     * 
+     * @method
+     * @param {Number} low The low of the range.
+     * @param {Number} high The high of the range.
+     * @param {String} suffix The suffix of the ranges value.
+     */
     this.setVerticalRange = function (low, high, suffix) {
       this.verticalRange = {
         low: low,
@@ -204,17 +276,27 @@ function S2D(S2Dpoint) {
     };
   
     /**
-     * This function sets the vertical and horizontal ranges of the slider. The handle will then map its percent position to the ranges provided to give the proper return values when {@link getValues} is called.
+     * <h4>Set ranges.</h4>
+     * 
+     * This function sets the horizontal and vertical ranges 
+     * of the slider. The handle will then map its percent 
+     * position to the ranges provided to give the proper 
+     * return values when {@link getValues} is called.
      * <br>
      * It can take One, Two, or Six arguments.
      * <br><br>
-     * The Suffixes passed in for any of the following options can be any string. It will be returned with the values of the handle when {@link getValues} is called.
-     *
+     * The Suffixes passed in for any of the following options 
+     * can be any string. It will be returned with the values 
+     * of the handle when {@link getValues} is called.
+     * 
+     * @method
+     * 
      * @example
      * <caption>
      * One argument: <br>
-     *    &emsp; This must be an entire object that defines the high, low, and suffixes for both the horizontal
-     *    and the vertical ranges.
+     *    &emsp; This must be an entire object that defines 
+     *           the high, low, and suffixes for both the horizontal
+     *           and the vertical ranges.
      * </caption>
      *
      *    Ex:
@@ -238,7 +320,8 @@ function S2D(S2Dpoint) {
      * @example
      * <caption>
      * Two arguments: <br>
-     *    &emsp; This must be two objects that define the horizontal and vertical ranges with suffixes.
+     *    &emsp; This must be two objects that define the 
+     *           horizontal and vertical ranges with suffixes.
      * </caption>
      *
      *    Ex:
@@ -261,7 +344,8 @@ function S2D(S2Dpoint) {
      * @example
      * <caption>
      * Six arguments: <br>
-     *    &emsp; This must be the low and high values of the horizontal and vertical ranges respectively.
+     *    &emsp; This must be the low and high values of 
+     *           the horizontal and vertical ranges respectively.
      * </caption>
      *    Ex:
      *      Arg_1:   // The Horizontal low.
