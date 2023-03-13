@@ -59,7 +59,8 @@ function S2D(S2Dpoint) {
      * 'r', and will clear the inner HTML of the top, 
      * bottom, left, or right handles respectively.
      * 
-     * @method
+     * @function clearHandleHTML
+     * @memberOf S2D#
      * @param {String} handleIdentifier 't', 'b', 'l', or 'r'
      * 
      * @returns {String}
@@ -79,7 +80,9 @@ function S2D(S2Dpoint) {
      * <br>
      * Ex: 1.1 => '1.100'
      * 
-     * @method
+     * 
+     * @function fswep
+     * @memberOf S2D#
      * @param {Float} float 
      * @param {number} places Defaults to 3. Must be an integer.
      * 
@@ -98,8 +101,9 @@ function S2D(S2Dpoint) {
      * respectively. If no ranges have been defined, 
      * <i>h</i>&nbsp; and <i>v</i>&nbsp; will be null.
      * 
-     * @method
      * 
+     * @function getRanges
+     * @memberOf S2D#
      * @returns {Object}
      */
     this.getRanges = function () {
@@ -131,7 +135,9 @@ function S2D(S2Dpoint) {
      * or if <i>percent</i>&nbsp; is <i>true</i>, then this will 
      * return the percentage value of its positions instead.
      * 
-     * @method
+     * 
+     * @function getValues
+     * @memberOf S2D#
      * @param {Boolean} percent Set to <i>true</i>&nbsp; if you want 
      * the values returned as percentages.
      * @returns {Object}
@@ -181,7 +187,9 @@ function S2D(S2Dpoint) {
      * This function takes in an Object with <i>x</i> and <i>y</i>
      * &nbsp; values in percentages.
      * 
-     * @method
+     * 
+     * @function moveTo
+     * @memberOf S2D#
      * @param {Object} position An object with an <i>x</i>&nbsp; 
      * and <i>y</i>&nbsp; position.
      */
@@ -194,7 +202,9 @@ function S2D(S2Dpoint) {
      * 
      * This function takes in a <i>float</i> and rounds it to <places>.
      * 
-     * @method
+     * 
+     * @function rtp
+     * @memberOf S2D#
      * @param {Number} float Needs to be a float.
      * @param {Number} places Needs to be an integer, defaults to 3.
      */
@@ -208,7 +218,9 @@ function S2D(S2Dpoint) {
      * Sets the inner HTML of a handle. This is useful to create 
      * custom handle elements that can be styled independently.
      * 
-     * @method
+     * 
+     * @function setHandleInnerHTML
+     * @memberOf S2D#
      * @param {String} handleIdentifier 't', 'b', 'l', or 'r'.
      * @param {String} newHTML HTML to be placed inside a handle.
      */
@@ -227,7 +239,9 @@ function S2D(S2Dpoint) {
      * position to the horizontal range provided to give the proper 
      * horizontal return values when {@link getValues} is called.
      * 
-     * @method
+     * 
+     * @function setHorizontalRange
+     * @memberOf S2D#
      * @param {Number} low The low of the range.
      * @param {Number} high The high of the range.
      * @param {String} suffix The suffix of the ranges value.
@@ -251,7 +265,9 @@ function S2D(S2Dpoint) {
      * and cannot move past the horizontal position of 
      * handle 1.
      * 
-     * @method
+     * 
+     * @function setLinks
+     * @memberOf S2D#
      * @param {String} linksInput 
      */
     this.setLinks = function (linksInput) {
@@ -263,7 +279,9 @@ function S2D(S2Dpoint) {
      * 
      * This function masks the defined handles, making them uninteractable.
      * 
-     * @method
+     * 
+     * @function maskHandles
+     * @memberOf S2D#
      * @param {String} handlesInput Can be 't', 'b', 'l', or 'r'. Defaults to null.
      */
     this.setMaskHandles = function (handlesInput = null) {
@@ -275,7 +293,9 @@ function S2D(S2Dpoint) {
      * 
      * This function sets a function to be called whenever the handle is moved.
      * 
-     * @method
+     * 
+     * @function setOnMoveFunction
+     * @memberOf S2D#
      * @param {Object} newMoveFunction A function to run when the handle is moved.
      * @param {Boolean} runOnce Should the function run once when it is set? Defaults to false.
      */
@@ -293,7 +313,9 @@ function S2D(S2Dpoint) {
      * position to the vertical range provided to give the proper 
      * vertical return values when {@link getValues} is called.
      * 
-     * @method
+     * 
+     * @function setVerticalRange
+     * @memberOf S2D#
      * @param {Number} low The low of the range.
      * @param {Number} high The high of the range.
      * @param {String} suffix The suffix of the ranges value.
@@ -320,7 +342,9 @@ function S2D(S2Dpoint) {
      * can be any string. It will be returned with the values 
      * of the handle when {@link getValues} is called.
      * 
-     * @method
+     * 
+     * @function setRanges
+     * @memberOf S2D#
      * 
      * @example
      * <caption>
