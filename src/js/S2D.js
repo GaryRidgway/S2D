@@ -240,14 +240,45 @@ function S2D(S2Dpoint) {
       };
     };
   
+    /**
+     * <h4>Set links.</h4>
+     * 
+     * This function sets a link to another handle, represented 
+     * as "{direction}-{handleindex}". This binds the direction's 
+     * bounds to the relevant directional bound of the linked 
+     * handle. For example, if you input "r-1", then this 
+     * handle will be linked on the right side to handle 1, 
+     * and cannot move past the horizontal position of 
+     * handle 1.
+     * 
+     * @method
+     * @param {String} linksInput 
+     */
     this.setLinks = function (linksInput) {
       setLinks(linksInput);
     };
   
+    /**
+     * <h4>Set mask handles.</h4>
+     * 
+     * This function masks the defined handles, making them uninteractable.
+     * 
+     * @method
+     * @param {String} handlesInput Can be 't', 'b', 'l', or 'r'. Defaults to null.
+     */
     this.setMaskHandles = function (handlesInput = null) {
       maskHandles(handlesInput);
     };
   
+    /**
+     * <h4>Set on move function.</h4>
+     * 
+     * This function sets a function to be called whenever the handle is moved.
+     * 
+     * @method
+     * @param {Object} newMoveFunction A function to run when the handle is moved.
+     * @param {Boolean} runOnce Should the function run once when it is set? Defaults to false.
+     */
     this.setOnMoveFunction = function (newMoveFunction, runOnce = true) {
       onMoveFn = newMoveFunction;
   
