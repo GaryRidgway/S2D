@@ -5,7 +5,7 @@
   "main": ", allowing their bounds to be modified by the linked handles' position.",
   "scripts": {
     "compile:sass": "node-sass ./src/scss/ -o ./dist/css",
-    "minify:jsf": "jsdoc ./src/js/*.js & uglifyjs-folder ./src/js/ -eo ./dist/js",
+    "minify:jsf": "jsdoc ./src/js/*.js -d gh-pages -c jsdoc.config.json & uglifyjs-folder ./src/js/ -eo ./dist/js ",
     "jsdoc": "./node_modules/.bin/jsdoc",
     "build": "npm run compile:sass & npm run minify:jsf",
     "watch": "npm run build && node server.js"

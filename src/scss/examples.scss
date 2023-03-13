@@ -1,0 +1,11 @@
+.example {
+    display: flex;
+
+    .example-text {
+        flex: 1 1 50%;
+    }
+
+    [id*="slider-2D-"] {
+        flex: 1 1 50%;
+    }
+}

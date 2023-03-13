@@ -1,17 +1,56 @@
-// TODO: Comment functions.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Source: S2D.js</title>
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+    <link type="text/css" rel="stylesheet" href="./../dist/css/S2D.css">
+    <link type="text/css" rel="stylesheet" href="./../dist/css/examples.css">
+</head>
+<body>
+
+    <nav class="sidebar">
+        <header class="nav-header">
+            <a href="index.html">
+                <img class="nav-logo" src="images/logo.svg" src="image" onerror="this.onerror=null; this.src='images/logo.png'" alt="alt text" />
+                <h1>Project Name</h1>
+            </a>
+        </header>
+
+        <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="S2D.html">S2D</a></li></ul>
+    </nav>
+
+    <div id="main">
+        <h1 class="page-title">Source: S2D.js</h1>
+
+        
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>// TODO: Comment functions.
 /**
- * <h3>Slider 2D</h3>
+ * &lt;h3>Slider 2D&lt;/h3>
  * 
  * @name S2D
  * @class
  * @classdesc
  * The Slider 2D class allows you to initialize a 
- * handle inside a "slider-2D-<i>X</i>" Element. 
+ * handle inside a "slider-2D-&lt;i>X&lt;/i>" Element. 
  * This will then be able to be queried for its 
  * values within the two-dimensional space of the 
  * slider.
  * 
- * @param {Element} S2Dpoint A handle Element inside a "slider-2D-<i>X</i>" element.
+ * @param {Element} S2Dpoint A handle Element inside a "slider-2D-&lt;i>X&lt;/i>" element.
  */
 function S2D(S2Dpoint) {
     //---VARIABLE INITIALIZATION---///
@@ -53,7 +92,7 @@ function S2D(S2Dpoint) {
     //---PUBLIC FUNCTIONS---///
   
     /**
-     * <h4>Clear handle HTML.</h4>
+     * &lt;h4>Clear handle HTML.&lt;/h4>
      * 
      * The handle identifier can be 't', 'b', 'l', or 
      * 'r', and will clear the inner HTML of the top, 
@@ -70,14 +109,14 @@ function S2D(S2Dpoint) {
     };
   
     /**
-     * <h4>Float to string with explicit places.</h4>
+     * &lt;h4>Float to string with explicit places.&lt;/h4>
      * 
-     * This function takes in a <i>float</i>&nbsp; and 
-     * rounds it to <i>places</i>, but explicitly 
+     * This function takes in a &lt;i>float&lt;/i>&amp;nbsp; and 
+     * rounds it to &lt;i>places&lt;/i>, but explicitly 
      * returns a string that will always have exactly 
-     * the number of <i>places</i>&nbsp; digits after the 
+     * the number of &lt;i>places&lt;/i>&amp;nbsp; digits after the 
      * decimal point.
-     * <br>
+     * &lt;br>
      * Ex: 1.1 => '1.100'
      * 
      * 
@@ -93,13 +132,13 @@ function S2D(S2Dpoint) {
     };
   
     /**
-     * <h4>Get ranges.</h4>
+     * &lt;h4>Get ranges.&lt;/h4>
      * 
      * This function gets the defined ranges for the S2D 
-     * instance, with <i>h</i>&nbsp; and <i>v</i>&nbsp; 
+     * instance, with &lt;i>h&lt;/i>&amp;nbsp; and &lt;i>v&lt;/i>&amp;nbsp; 
      * representing the horizontal and vertical ranges 
      * respectively. If no ranges have been defined, 
-     * <i>h</i>&nbsp; and <i>v</i>&nbsp; will be null.
+     * &lt;i>h&lt;/i>&amp;nbsp; and &lt;i>v&lt;/i>&amp;nbsp; will be null.
      * 
      * 
      * @function getRanges
@@ -108,9 +147,9 @@ function S2D(S2Dpoint) {
      */
     this.getRanges = function () {
       if (
-        typeof this.horizontalRange.low !== "object" &&
-        typeof this.horizontalRange.high !== "object" &&
-        typeof this.verticalRange.low !== "object" &&
+        typeof this.horizontalRange.low !== "object" &amp;&amp;
+        typeof this.horizontalRange.high !== "object" &amp;&amp;
+        typeof this.verticalRange.low !== "object" &amp;&amp;
         typeof this.verticalRange.high !== "object"
       ) {
         return {
@@ -126,19 +165,19 @@ function S2D(S2Dpoint) {
     };
 
     /**
-     * <h4>Get values.</h4>
+     * &lt;h4>Get values.&lt;/h4>
      * 
-     * This function will return the <i>h</i>&nbsp; (Horizontal) 
-     * and <i>v</i>&nbsp; (Vertical) values of the handle respective 
-     * to its "slider-2D-<i>X</i>" container. If no ranges 
+     * This function will return the &lt;i>h&lt;/i>&amp;nbsp; (Horizontal) 
+     * and &lt;i>v&lt;/i>&amp;nbsp; (Vertical) values of the handle respective 
+     * to its "slider-2D-&lt;i>X&lt;/i>" container. If no ranges 
      * have previously been defined with {@link setRanges}, 
-     * or if <i>percent</i>&nbsp; is <i>true</i>, then this will 
+     * or if &lt;i>percent&lt;/i>&amp;nbsp; is &lt;i>true&lt;/i>, then this will 
      * return the percentage value of its positions instead.
      * 
      * 
      * @function getValues
      * @memberOf S2D#
-     * @param {Boolean} percent Set to <i>true</i>&nbsp; if you want 
+     * @param {Boolean} percent Set to &lt;i>true&lt;/i>&amp;nbsp; if you want 
      * the values returned as percentages.
      * @returns {Object}
      */
@@ -148,7 +187,7 @@ function S2D(S2Dpoint) {
       let preliminaryVals;
   
       // The user has not defined a set of ranges.
-      if ((ranges.h === null && ranges.v === null) || percent) {
+      if ((ranges.h === null &amp;&amp; ranges.v === null) || percent) {
         preliminaryVals = {
           h: parseFloat(slider.getAttribute("horizontal-" + handleIndex)),
           hSuffix: "%",
@@ -183,24 +222,24 @@ function S2D(S2Dpoint) {
     };
   
     /**
-     * <h4>Move to.</h4>
-     * This function takes in an Object with <i>x</i> and <i>y</i>
-     * &nbsp; values in percentages.
+     * &lt;h4>Move to.&lt;/h4>
+     * This function takes in an Object with &lt;i>x&lt;/i> and &lt;i>y&lt;/i>
+     * &amp;nbsp; values in percentages.
      * 
      * 
      * @function moveTo
      * @memberOf S2D#
-     * @param {Object} position An object with an <i>x</i>&nbsp; 
-     * and <i>y</i>&nbsp; position.
+     * @param {Object} position An object with an &lt;i>x&lt;/i>&amp;nbsp; 
+     * and &lt;i>y&lt;/i>&amp;nbsp; position.
      */
     this.moveTo = function (position) {
       doMouseDown(null, null, position);
     };
   
     /**
-     * <h4>Round to places.</h4>
+     * &lt;h4>Round to places.&lt;/h4>
      * 
-     * This function takes in a <i>float</i> and rounds it to <places>.
+     * This function takes in a &lt;i>float&lt;/i> and rounds it to &lt;places>.
      * 
      * 
      * @function rtp
@@ -213,7 +252,7 @@ function S2D(S2Dpoint) {
     };
   
     /**
-     * <h4>Set handle inner HTML.</h4>
+     * &lt;h4>Set handle inner HTML.&lt;/h4>
      * 
      * Sets the inner HTML of a handle. This is useful to create 
      * custom handle elements that can be styled independently.
@@ -232,7 +271,7 @@ function S2D(S2Dpoint) {
     };
   
     /**
-     * <h4>Set horizontal range.</h4>
+     * &lt;h4>Set horizontal range.&lt;/h4>
      * 
      * This function sets the horizontal range 
      * of the slider. The handle will then map its percent 
@@ -255,7 +294,7 @@ function S2D(S2Dpoint) {
     };
   
     /**
-     * <h4>Set links.</h4>
+     * &lt;h4>Set links.&lt;/h4>
      * 
      * This function sets a link to another handle, represented 
      * as "{direction}-{handleindex}". This binds the direction's 
@@ -275,7 +314,7 @@ function S2D(S2Dpoint) {
     };
   
     /**
-     * <h4>Set mask handles.</h4>
+     * &lt;h4>Set mask handles.&lt;/h4>
      * 
      * This function masks the defined handles, making them uninteractable.
      * 
@@ -289,7 +328,7 @@ function S2D(S2Dpoint) {
     };
   
     /**
-     * <h4>Set on move function.</h4>
+     * &lt;h4>Set on move function.&lt;/h4>
      * 
      * This function sets a function to be called whenever the handle is moved.
      * 
@@ -306,7 +345,7 @@ function S2D(S2Dpoint) {
     };
   
     /**
-     * <h4>Set vertical range.</h4>
+     * &lt;h4>Set vertical range.&lt;/h4>
      * 
      * This function sets the vertical range 
      * of the slider. The handle will then map its percent 
@@ -329,15 +368,15 @@ function S2D(S2Dpoint) {
     };
   
     /**
-     * <h4>Set ranges.</h4>
+     * &lt;h4>Set ranges.&lt;/h4>
      * 
      * This function sets the horizontal and vertical ranges 
      * of the slider. The handle will then map its percent 
      * position to the ranges provided to give the proper 
      * return values when {@link getValues} is called.
-     * <br>
+     * &lt;br>
      * It can take One, Two, or Six arguments.
-     * <br><br>
+     * &lt;br>&lt;br>
      * The Suffixes passed in for any of the following options 
      * can be any string. It will be returned with the values 
      * of the handle when {@link getValues} is called.
@@ -347,12 +386,12 @@ function S2D(S2Dpoint) {
      * @memberOf S2D#
      * 
      * @example
-     * <caption>
-     * One argument: <br>
-     *    &emsp; This must be an entire object that defines 
+     * &lt;caption>
+     * One argument: &lt;br>
+     *    &amp;emsp; This must be an entire object that defines 
      *           the high, low, and suffixes for both the horizontal
      *           and the vertical ranges.
-     * </caption>
+     * &lt;/caption>
      *
      *    Ex:
      *      Arg_1:
@@ -373,11 +412,11 @@ function S2D(S2Dpoint) {
      *      S2DInstance.seRanges(Arg_1);
      *
      * @example
-     * <caption>
-     * Two arguments: <br>
-     *    &emsp; This must be two objects that define the 
+     * &lt;caption>
+     * Two arguments: &lt;br>
+     *    &amp;emsp; This must be two objects that define the 
      *           horizontal and vertical ranges with suffixes.
-     * </caption>
+     * &lt;/caption>
      *
      *    Ex:
      *      Arg_1: // The Horizontal range.
@@ -397,11 +436,11 @@ function S2D(S2Dpoint) {
      *      S2DInstance.seRanges(Arg_1, Arg_2);
      *
      * @example
-     * <caption>
-     * Six arguments: <br>
-     *    &emsp; This must be the low and high values of 
+     * &lt;caption>
+     * Six arguments: &lt;br>
+     *    &amp;emsp; This must be the low and high values of 
      *           the horizontal and vertical ranges respectively.
-     * </caption>
+     * &lt;/caption>
      *    Ex:
      *      Arg_1:   // The Horizontal low.
      *        {Number}
@@ -847,11 +886,11 @@ function S2D(S2Dpoint) {
     function initializeHandleHTML() {
       const htmlString =
         '\
-            <div class="grapple-point-slider grapple-point-horizontal-slider top"></div>\
-            <div class="grapple-point-slider grapple-point-horizontal-slider bottom"></div>\
-            <div class="grapple-point-slider grapple-point-vertical-slider left"></div>\
-            <div class="grapple-point-slider grapple-point-vertical-slider right"></div>\
-            <div class="grapple-handle"></div>\
+            &lt;div class="grapple-point-slider grapple-point-horizontal-slider top">&lt;/div>\
+            &lt;div class="grapple-point-slider grapple-point-horizontal-slider bottom">&lt;/div>\
+            &lt;div class="grapple-point-slider grapple-point-vertical-slider left">&lt;/div>\
+            &lt;div class="grapple-point-slider grapple-point-vertical-slider right">&lt;/div>\
+            &lt;div class="grapple-handle">&lt;/div>\
           ';
   
       point.innerHTML = htmlString;
@@ -983,7 +1022,7 @@ function S2D(S2Dpoint) {
             // https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/points
             const svgLink =
               '\
-                    <svg\
+                    &lt;svg\
                         slider-link="' +
               linkString +
               '"\
@@ -991,15 +1030,15 @@ function S2D(S2Dpoint) {
                         xmlns="http://www.w3.org/2000/svg"\
                         preserveAspectRatio="none"\
                     >\
-                        <polyline\
+                        &lt;polyline\
                             fill="none"\
                             stroke="#008eff"\
                             stroke-linecap="round"\
                             stroke-dasharray="4 2"\
                             points=""\
                             marker-end="url(#triangle)"\
-                        ></polyline>\
-                    </svg>\
+                        >&lt;/polyline>\
+                    &lt;/svg>\
                 ';
   
             const svgDiv = document.createElement("div");
@@ -1053,4 +1092,25 @@ function S2D(S2Dpoint) {
   
     // Initialize with config.
     initializeFromConfig(this);
-  }
+  }</code></pre>
+        </article>
+    </section>
+
+
+
+
+    </div>
+
+    <br class="clear">
+
+    <footer>
+        Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.2</a>
+    </footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+<script src="./../dist/js/S2D.min.js"> </script>
+<script src="./../dist/js/examples.min.js"> </script>
+
+</body>
+</html>
