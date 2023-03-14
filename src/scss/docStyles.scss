@@ -1,0 +1,49 @@
+.nav-header {
+    padding-left: 0;
+
+    h1 {
+        margin-left: 0;
+    }
+}
+
+article {
+    h2, h3.subsection-title {
+        font-size: 2.3rem;
+        background-color: #c2e4ff;
+        margin-bottom: 0;
+        padding: 0.2rem 1rem;
+    
+        + .name {
+            margin-top: 0rem;
+        }
+    }
+
+    pre.prettyprint {
+        background: #efefef;;
+        padding: 3em 3rem;
+        border-radius: 5px;
+    }
+    
+    h4.name {
+        font-size: 1.8rem;
+        padding-top: 1rem;
+        margin-top: 4rem;
+        border-top: 3px solid #9d9d9d;
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            width: 40%;
+            height: 4px;
+            background: #ffc800;
+            left: 0;
+            bottom: -1rem;
+        }
+    }
+}
+
+*:empty() {
+    margin: 0;
+    padding: 0;
+}

@@ -13,18 +13,18 @@
     <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
     <link type="text/css" rel="stylesheet" href="./../dist/css/S2D.css">
     <link type="text/css" rel="stylesheet" href="./../dist/css/examples.css">
+    <link type="text/css" rel="stylesheet" href="./../dist/css/docStyles.css">
 </head>
 <body>
 
     <nav class="sidebar">
         <header class="nav-header">
             <a href="index.html">
-                <img class="nav-logo" src="images/logo.svg" src="image" onerror="this.onerror=null; this.src='images/logo.png'" alt="alt text" />
-                <h1>Project Name</h1>
+                <h1>Slider 2D</h1>
             </a>
         </header>
 
-        <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="S2D.html">S2D</a></li></ul>
+        <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="S2D.html">S2D</a></li></ul><h3>Global</h3><ul><li><a href="global.html#1:Simple2Dslider">1: Simple 2D slider</a></li><li><a href="global.html#2:Horizontalslider">2: Horizontal slider</a></li><li><a href="global.html#3:Verticalslider">3: Vertical slider</a></li><li><a href="global.html#4:Linkedhandles">4: Linked handles</a></li></ul>
     </nav>
 
     <div id="main">
@@ -38,53 +38,240 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * 
+ * @description
  * &lt;div class="example example-1">
-        &lt;div class="example-text">
-            &lt;p>
-                This first example shows a simple slider that can move in two dimensions.
-            &lt;/p>
-            &lt;div>&lt;span class="handle-0 horizontal">Horizontal: &lt;/span>&lt;span class="value">&lt;/span>&lt;/div>
-            &lt;div>&lt;span class="handle-0 vertical">Vertical: &lt;/span>&lt;span class="value">&lt;/span>&lt;/div>
-        &lt;/div>
-        &lt;div id="slider-2D-1">
-            &lt;div id="grapple-point-1">&lt;/div>
-        &lt;/div>
-    &lt;/div>
- * @name Example 1, Grapple point 1
+ *       &lt;div class="example-text">
+ *           &lt;p>
+ *               This first example shows a simple slider that can move in two dimensions.
+ *           &lt;/p>
+ *           &lt;div>&lt;span class="handle-1 horizontal">Horizontal: &lt;/span>&lt;span class="value">&lt;/span>&lt;/div>
+ *           &lt;div>&lt;span class="handle-1 vertical">Vertical: &lt;/span>&lt;span class="value">&lt;/span>&lt;/div>
+ *       &lt;/div>
+ *       &lt;div id="slider-2D-1">
+ *           &lt;div id="grapple-point-11">&lt;/div>
+ *       &lt;/div>
+ *   &lt;/div>
  * 
+ * @name 1: Simple 2D slider
  * @example
-const E1GP = new S2D({
-    point: document.getElementById('grapple-point-1'),
-    moveTo: {
-        x: 50,
-        y: 50
-    }
-});
-
-const E1Horizontal = document.querySelector('.handle-0.horizontal + .value');
-const E1Vertical = document.querySelector('.handle-0.vertical + .value');
-E1GP.setOnMoveFunction(function() {
-    const values = E1GP.getValues();
-    E1Horizontal.innerHTML = values.h+values.hSuffix;
-    E1Vertical.innerHTML = values.v+values.vSuffix;
-}, true);
+ * 
+ * const E1GP1 = new S2D({
+ *     point: document.querySelector('.example1 .grapple-point-11'),
+ *     moveTo: {
+ *         x: 50,
+ *         y: 50
+ *     }
+ * });
+ * 
+const E1GP1Horizontal = document.querySelector('.example-1 .handle-1.horizontal + .value');
+ *
+const E1GP1Vertical = document.querySelector('.example-1 .handle-1.vertical + .value');
+ * E1GP1.setOnMoveFunction(function() {
+ *     const values = E1GP1.getValues();
+ *     E1GP1Horizontal.innerHTML = values.h+values.hSuffix;
+ *     E1GP1Vertical.innerHTML = values.v+values.vSuffix;
+ * }, true);
  */
-const E1GP = new S2D({
-    point: document.getElementById('grapple-point-1'),
+const E1GP1 = new S2D({
+    point: document.querySelector('.example-1 #grapple-point-11'),
     moveTo: {
         x: 50,
         y: 50
-    }
+    },
 });
+const E1GP1Horizontal = document.querySelector('.example-1 .handle-1.horizontal + .value');
+const E1GP1Vertical = document.querySelector('.example-1 .handle-1.vertical + .value');
+E1GP1.setOnMoveFunction(function() {
+    const values = E1GP1.getValues();
+    E1GP1Horizontal.innerHTML = values.h+values.hSuffix;
+    E1GP1Vertical.innerHTML = values.v+values.vSuffix;
+}, true);
 
-const E1Horizontal = document.querySelector('.handle-0.horizontal + .value');
-const E1Vertical = document.querySelector('.handle-0.vertical + .value');
-E1GP.setOnMoveFunction(function() {
-    const values = E1GP.getValues();
-    E1Horizontal.innerHTML = values.h+values.hSuffix;
-    E1Vertical.innerHTML = values.v+values.vSuffix;
-}, true);</code></pre>
+/**
+ * @description
+ * &lt;div class="example example-2">
+ *      &lt;div class="example-text">
+ *          &lt;p>
+ *              This second example shows how to create a horizontal slider.
+ *          &lt;/p>
+ *          &lt;div>&lt;span class="handle-1 horizontal">Horizontal: &lt;/span>&lt;span class="value">&lt;/span>&lt;/div>
+ *      &lt;/div>
+ *      &lt;div id="slider-2D-2">
+ *          &lt;div id="grapple-point-21">&lt;/div>
+ *      &lt;/div>
+ * &lt;/div>
+ * 
+ * 
+ * @name 2: Horizontal slider
+ * @example
+ * const E2GP1 = new S2D({
+ *     point: document.querySelector('.example-2 #grapple-point-21'),
+ *     moveTo: {
+ *         x: 50,
+ *         y: 0
+ *    }
+ * });
+ * 
+ * const E2GP1Horizontal = document.querySelector('.handle-1.horizontal + .value');
+ * 
+ * E2GP1.setOnMoveFunction(function() {
+ *     const values = E2GP1.getValues();
+ *     E2GP1Horizontal.innerHTML = values.h+values.hSuffix;
+ * }, true);
+ */
+const E2GP1 = new S2D({
+    point: document.querySelector('.example-2 #grapple-point-21'),
+    moveTo: {
+        x: 50,
+        y: 0
+    },
+    setMaskHandles: "rhl",
+});
+const E2GP1Horizontal = document.querySelector('.example-2 .handle-1.horizontal + .value');
+E2GP1.setOnMoveFunction(function() {
+    const values = E2GP1.getValues();
+    E2GP1Horizontal.innerHTML = values.h+values.hSuffix;
+}, true);
+
+/**
+ * @description
+ * &lt;div class="example example-3">
+ *       &lt;div class="example-text">
+ *           &lt;p>
+ *               This third example shows how to create a vertical slider.
+ *           &lt;/p>
+ *           &lt;div>&lt;span class="handle-1 vertical">Vertical: &lt;/span>&lt;span class="value">&lt;/span>&lt;/div>
+ *       &lt;/div>
+ *       &lt;div id="slider-2D-3">
+ *           &lt;div id="grapple-point-31">&lt;/div>
+ *       &lt;/div>
+ *   &lt;/div>
+ * 
+ * 
+ * @name 3: Vertical slider
+ * @example
+ * 
+ * const E3GP1 = new S2D({
+ *     point: document.querySelector('.example-3 #grapple-point-31'),
+ *     moveTo: {
+ *         x: 0,
+ *         y: 50
+ *     }
+ * });
+ * 
+ * const E3GP1Vertical = document.querySelector('example-3 .handle-1.vertical + .value');
+ * 
+ * E3GP1.setOnMoveFunction(function() {
+ *     const values = E3GP1.getValues();
+ *     E3GP1Vertical.innerHTML = values.v+values.vSuffix;
+ * }, true);
+ */
+const E3GP1 = new S2D({
+    point: document.querySelector('.example-3 #grapple-point-31'),
+    moveTo: {
+        x: 0,
+        y: 50
+    },
+    setMaskHandles: "thb",
+});
+const E3GP1Vertical = document.querySelector('.example-3 .handle-1.vertical + .value');
+E3GP1.setOnMoveFunction(function() {
+    const values = E3GP1.getValues();
+    E3GP1Vertical.innerHTML = values.v+values.vSuffix;
+}, true);
+
+/**
+ * @description
+ * &lt;div class="example example-4">
+ *       &lt;div class="example-text">
+ *           &lt;p>
+ *               This fourth example shows that you can link handles and have them become bounds of each other, disallowing either to go higher or lower than their bound partner.
+ *           &lt;/p>
+ *           &lt;div>&lt;span class="handle-1 horizontal">Horizontal: &lt;/span>&lt;span class="value">&lt;/span>&lt;/div>
+ *           &lt;div>&lt;span class="handle-1 vertical">Vertical: &lt;/span>&lt;span class="value">&lt;/span>&lt;/div>
+ * 
+ *           &lt;div>&lt;span class="handle-2 horizontal">Horizontal: &lt;/span>&lt;span class="value">&lt;/span>&lt;/div>
+ *           &lt;div>&lt;span class="handle-2 vertical">Vertical: &lt;/span>&lt;span class="value">&lt;/span>&lt;/div>
+ *       &lt;/div>
+ *       &lt;div id="slider-2D-4">
+ *           &lt;div id="grapple-point-41">&lt;/div>
+ *           &lt;div id="grapple-point-42">&lt;/div>
+ *       &lt;/div>
+ *   &lt;/div>
+ * 
+ * 
+ * @name 4: Linked handles
+ * @example
+ * 
+ * const E4GP1 = new S2D({
+ *     point: document.querySelector('.example-4 #grapple-point-41'),
+ *     moveTo: {
+ *         x: 25,
+ *         y: 25
+ *     },
+ *     setMaskHandles: "r",
+ * 
+ * });
+ * 
+ * const E4GP2 = new S2D({
+ *     point: document.querySelector('.example-4 #grapple-point-42'),
+ *     moveTo: {
+ *         x: 75,
+ *         y: 75
+ *     },
+ *     setMaskHandles: "l",
+ * });
+ * 
+ * const E4GP1Horizontal = document.querySelector('.example-4 .handle-1.horizontal + .value');
+ * const E4GP1Vertical = document.querySelector('.example-4 .handle-1.vertical + .value');
+ * 
+ * const E4GP2Horizontal = document.querySelector('.example-4 .handle-2.horizontal + .value');
+ * const E4GP2Vertical = document.querySelector('.example-4 .handle-2.vertical + .value');
+ * 
+ * E4GP1.setOnMoveFunction(function() {
+ *     const values = E4GP1.getValues();
+ *     E4GP1Horizontal.innerHTML = values.h+values.hSuffix;
+ *     E4GP1Vertical.innerHTML = values.v+values.vSuffix;
+ * }, true);
+ * 
+ * E4GP2.setOnMoveFunction(function() {
+ *     const values = E4GP2.getValues();
+ *     E4GP2Horizontal.innerHTML = values.h+values.hSuffix;
+ *     E4GP2Vertical.innerHTML = values.v+values.vSuffix;
+ * }, true);
+ */
+const E4GP1 = new S2D({
+     point: document.querySelector('.example-4 #grapple-point-41'),
+     moveTo: {
+         x: 25,
+         y: 25
+     },
+     setMaskHandles: "r",
+     setLinks: "r-42"
+ });
+ const E4GP2 = new S2D({
+     point: document.querySelector('.example-4 #grapple-point-42'),
+     moveTo: {
+         x: 75,
+         y: 75
+     },
+     setMaskHandles: "l",
+     setLinks: "l-41"
+ });
+ const E4GP1Horizontal = document.querySelector('.example-4 .handle-1.horizontal + .value');
+ const E4GP1Vertical = document.querySelector('.example-4 .handle-1.vertical + .value');
+ const E4GP2Horizontal = document.querySelector('.example-4 .handle-2.horizontal + .value');
+ const E4GP2Vertical = document.querySelector('.example-4 .handle-2.vertical + .value');
+ E4GP1.setOnMoveFunction(function() {
+     const values = E4GP1.getValues();
+     E4GP1Horizontal.innerHTML = values.h+values.hSuffix;
+     E4GP1Vertical.innerHTML = values.v+values.vSuffix;
+ }, true);
+ E4GP2.setOnMoveFunction(function() {
+     const values = E4GP2.getValues();
+     E4GP2Horizontal.innerHTML = values.h+values.hSuffix;
+     E4GP2Vertical.innerHTML = values.v+values.vSuffix;
+ }, true);</code></pre>
         </article>
     </section>
 
@@ -95,14 +282,11 @@ E1GP.setOnMoveFunction(function() {
 
     <br class="clear">
 
-    <footer>
-        Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.2</a>
-    </footer>
-
 <script> prettyPrint(); </script>
 <script src="scripts/linenumber.js"> </script>
-<script src="./../dist/js/S2D.min.js"> </script>
-<script src="./../dist/js/examples.min.js"> </script>
+<script src="./../src/js/S2D.js"> </script>
+<script src="./../src/js/examples.js"> </script>
+<script src="./../src/js/docJs.js"> </script>
 
 </body>
 </html>

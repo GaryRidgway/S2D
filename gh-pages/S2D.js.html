@@ -13,18 +13,18 @@
     <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
     <link type="text/css" rel="stylesheet" href="./../dist/css/S2D.css">
     <link type="text/css" rel="stylesheet" href="./../dist/css/examples.css">
+    <link type="text/css" rel="stylesheet" href="./../dist/css/docStyles.css">
 </head>
 <body>
 
     <nav class="sidebar">
         <header class="nav-header">
             <a href="index.html">
-                <img class="nav-logo" src="images/logo.svg" src="image" onerror="this.onerror=null; this.src='images/logo.png'" alt="alt text" />
-                <h1>Project Name</h1>
+                <h1>Slider 2D</h1>
             </a>
         </header>
 
-        <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="S2D.html">S2D</a></li></ul>
+        <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="S2D.html">S2D</a></li></ul><h3>Global</h3><ul><li><a href="global.html#1:Simple2Dslider">1: Simple 2D slider</a></li><li><a href="global.html#2:Horizontalslider">2: Horizontal slider</a></li><li><a href="global.html#3:Verticalslider">3: Vertical slider</a></li><li><a href="global.html#4:Linkedhandles">4: Linked handles</a></li></ul>
     </nav>
 
     <div id="main">
@@ -42,7 +42,7 @@
  * &lt;h3>Slider 2D&lt;/h3>
  * 
  * @name S2D
- * @class
+ * @class S2D
  * @classdesc
  * The Slider 2D class allows you to initialize a 
  * handle inside a "slider-2D-&lt;i>X&lt;/i>" Element. 
@@ -92,14 +92,12 @@ function S2D(S2Dpoint) {
     //---PUBLIC FUNCTIONS---///
   
     /**
-     * &lt;h4>Clear handle HTML.&lt;/h4>
-     * 
      * The handle identifier can be 't', 'b', 'l', or 
      * 'r', and will clear the inner HTML of the top, 
      * bottom, left, or right handles respectively.
      * 
-     * @function clearHandleHTML
-     * @memberOf S2D#
+     * @method clearHandleHTML
+     * @memberof S2D#
      * @param {String} handleIdentifier 't', 'b', 'l', or 'r'
      * 
      * @returns {String}
@@ -109,7 +107,7 @@ function S2D(S2Dpoint) {
     };
   
     /**
-     * &lt;h4>Float to string with explicit places.&lt;/h4>
+     * &lt;h5>(Float to string with explicit places)&lt;/h5>
      * 
      * This function takes in a &lt;i>float&lt;/i>&amp;nbsp; and 
      * rounds it to &lt;i>places&lt;/i>, but explicitly 
@@ -120,8 +118,8 @@ function S2D(S2Dpoint) {
      * Ex: 1.1 => '1.100'
      * 
      * 
-     * @function fswep
-     * @memberOf S2D#
+     * @method fswep
+     * @memberof S2D#
      * @param {Float} float 
      * @param {number} places Defaults to 3. Must be an integer.
      * 
@@ -132,8 +130,6 @@ function S2D(S2Dpoint) {
     };
   
     /**
-     * &lt;h4>Get ranges.&lt;/h4>
-     * 
      * This function gets the defined ranges for the S2D 
      * instance, with &lt;i>h&lt;/i>&amp;nbsp; and &lt;i>v&lt;/i>&amp;nbsp; 
      * representing the horizontal and vertical ranges 
@@ -141,8 +137,9 @@ function S2D(S2Dpoint) {
      * &lt;i>h&lt;/i>&amp;nbsp; and &lt;i>v&lt;/i>&amp;nbsp; will be null.
      * 
      * 
-     * @function getRanges
-     * @memberOf S2D#
+     * @name Get ranges
+     * @method getRanges
+     * @memberof S2D#
      * @returns {Object}
      */
     this.getRanges = function () {
@@ -165,8 +162,6 @@ function S2D(S2Dpoint) {
     };
 
     /**
-     * &lt;h4>Get values.&lt;/h4>
-     * 
      * This function will return the &lt;i>h&lt;/i>&amp;nbsp; (Horizontal) 
      * and &lt;i>v&lt;/i>&amp;nbsp; (Vertical) values of the handle respective 
      * to its "slider-2D-&lt;i>X&lt;/i>" container. If no ranges 
@@ -175,8 +170,9 @@ function S2D(S2Dpoint) {
      * return the percentage value of its positions instead.
      * 
      * 
-     * @function getValues
-     * @memberOf S2D#
+     * @name Get values
+     * @method getValues
+     * @memberof S2D#
      * @param {Boolean} percent Set to &lt;i>true&lt;/i>&amp;nbsp; if you want 
      * the values returned as percentages.
      * @returns {Object}
@@ -222,13 +218,13 @@ function S2D(S2Dpoint) {
     };
   
     /**
-     * &lt;h4>Move to.&lt;/h4>
      * This function takes in an Object with &lt;i>x&lt;/i> and &lt;i>y&lt;/i>
      * &amp;nbsp; values in percentages.
      * 
      * 
-     * @function moveTo
-     * @memberOf S2D#
+     * @name Move to
+     * @method moveTo
+     * @memberof S2D#
      * @param {Object} position An object with an &lt;i>x&lt;/i>&amp;nbsp; 
      * and &lt;i>y&lt;/i>&amp;nbsp; position.
      */
@@ -237,13 +233,14 @@ function S2D(S2Dpoint) {
     };
   
     /**
-     * &lt;h4>Round to places.&lt;/h4>
+     * &lt;h5>(Round to places)&lt;/h5>
      * 
      * This function takes in a &lt;i>float&lt;/i> and rounds it to &lt;places>.
      * 
      * 
-     * @function rtp
-     * @memberOf S2D#
+     * @alias Round to places
+     * @method rtp
+     * @memberof S2D#
      * @param {Number} float Needs to be a float.
      * @param {Number} places Needs to be an integer, defaults to 3.
      */
@@ -252,14 +249,12 @@ function S2D(S2Dpoint) {
     };
   
     /**
-     * &lt;h4>Set handle inner HTML.&lt;/h4>
-     * 
      * Sets the inner HTML of a handle. This is useful to create 
      * custom handle elements that can be styled independently.
      * 
      * 
-     * @function setHandleInnerHTML
-     * @memberOf S2D#
+     * @method setHandleInnerHTML
+     * @memberof S2D#
      * @param {String} handleIdentifier 't', 'b', 'l', or 'r'.
      * @param {String} newHTML HTML to be placed inside a handle.
      */
@@ -271,16 +266,14 @@ function S2D(S2Dpoint) {
     };
   
     /**
-     * &lt;h4>Set horizontal range.&lt;/h4>
-     * 
      * This function sets the horizontal range 
      * of the slider. The handle will then map its percent 
      * position to the horizontal range provided to give the proper 
      * horizontal return values when {@link getValues} is called.
      * 
      * 
-     * @function setHorizontalRange
-     * @memberOf S2D#
+     * @method setHorizontalRange
+     * @memberof S2D#
      * @param {Number} low The low of the range.
      * @param {Number} high The high of the range.
      * @param {String} suffix The suffix of the ranges value.
@@ -294,8 +287,6 @@ function S2D(S2Dpoint) {
     };
   
     /**
-     * &lt;h4>Set links.&lt;/h4>
-     * 
      * This function sets a link to another handle, represented 
      * as "{direction}-{handleindex}". This binds the direction's 
      * bounds to the relevant directional bound of the linked 
@@ -305,8 +296,8 @@ function S2D(S2Dpoint) {
      * handle 1.
      * 
      * 
-     * @function setLinks
-     * @memberOf S2D#
+     * @method setLinks
+     * @memberof S2D#
      * @param {String} linksInput 
      */
     this.setLinks = function (linksInput) {
@@ -314,13 +305,11 @@ function S2D(S2Dpoint) {
     };
   
     /**
-     * &lt;h4>Set mask handles.&lt;/h4>
-     * 
      * This function masks the defined handles, making them uninteractable.
      * 
      * 
-     * @function maskHandles
-     * @memberOf S2D#
+     * @method maskHandles
+     * @memberof S2D#
      * @param {String} handlesInput Can be 't', 'b', 'l', or 'r'. Defaults to null.
      */
     this.setMaskHandles = function (handlesInput = null) {
@@ -328,13 +317,11 @@ function S2D(S2Dpoint) {
     };
   
     /**
-     * &lt;h4>Set on move function.&lt;/h4>
-     * 
      * This function sets a function to be called whenever the handle is moved.
      * 
      * 
-     * @function setOnMoveFunction
-     * @memberOf S2D#
+     * @method setOnMoveFunction
+     * @memberof S2D#
      * @param {Object} newMoveFunction A function to run when the handle is moved.
      * @param {Boolean} runOnce Should the function run once when it is set? Defaults to false.
      */
@@ -345,16 +332,14 @@ function S2D(S2Dpoint) {
     };
   
     /**
-     * &lt;h4>Set vertical range.&lt;/h4>
-     * 
      * This function sets the vertical range 
      * of the slider. The handle will then map its percent 
      * position to the vertical range provided to give the proper 
      * vertical return values when {@link getValues} is called.
      * 
      * 
-     * @function setVerticalRange
-     * @memberOf S2D#
+     * @method setVerticalRange
+     * @memberof S2D#
      * @param {Number} low The low of the range.
      * @param {Number} high The high of the range.
      * @param {String} suffix The suffix of the ranges value.
@@ -368,8 +353,6 @@ function S2D(S2Dpoint) {
     };
   
     /**
-     * &lt;h4>Set ranges.&lt;/h4>
-     * 
      * This function sets the horizontal and vertical ranges 
      * of the slider. The handle will then map its percent 
      * position to the ranges provided to give the proper 
@@ -382,8 +365,8 @@ function S2D(S2Dpoint) {
      * of the handle when {@link getValues} is called.
      * 
      * 
-     * @function setRanges
-     * @memberOf S2D#
+     * @method setRanges
+     * @memberof S2D#
      * 
      * @example
      * &lt;caption>
@@ -600,8 +583,8 @@ function S2D(S2Dpoint) {
               );
             }
           } else {
-            const linkedElement = sliderContainer.getElementById(
-              "grapple-point-" + linkedHandleIndex
+            const linkedElement = sliderContainer.querySelector(
+              "#grapple-point-" + linkedHandleIndex
             );
             const linkedElementBounds = linkedElement
               .getAttribute("initial-position")
@@ -1103,14 +1086,11 @@ function S2D(S2Dpoint) {
 
     <br class="clear">
 
-    <footer>
-        Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.2</a>
-    </footer>
-
 <script> prettyPrint(); </script>
 <script src="scripts/linenumber.js"> </script>
-<script src="./../dist/js/S2D.min.js"> </script>
-<script src="./../dist/js/examples.min.js"> </script>
+<script src="./../src/js/S2D.js"> </script>
+<script src="./../src/js/examples.js"> </script>
+<script src="./../src/js/docJs.js"> </script>
 
 </body>
 </html>

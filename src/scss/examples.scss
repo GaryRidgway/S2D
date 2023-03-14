@@ -3,9 +3,26 @@
 
     .example-text {
         flex: 1 1 50%;
+        margin: 20px;
     }
 
     [id*="slider-2D-"] {
+        margin: 20px;
         flex: 1 1 50%;
+    }
+
+    &.example-2 #slider-2D-2 {
+        max-height: 25px;
+    }
+
+    &.example-3 {
+        div {
+            flex: unset;
+        }
+
+        #slider-2D-3 {
+            height: 200px;
+            width: 25px;
+        }
     }
 }
