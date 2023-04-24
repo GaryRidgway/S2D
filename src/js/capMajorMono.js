@@ -21,7 +21,6 @@ function lineCode(code) {
             element.classList.add('line-counter');
 
             const count = (text.match(/\n/g) || []).length;
-            console.log(count);
             if (count > 1) {
                 element.classList.add('line-counter-after');
             }
@@ -29,7 +28,9 @@ function lineCode(code) {
     });
 
     const last = [].slice.call(Array.from(spans).reverse()).pop();
-    last.classList.add('line-counter');
+    if (last) {
+        last.classList.add('line-counter');
+    }
 };
 
 function containsWhitespace(str) {

@@ -57,9 +57,13 @@ function moveNames() {
         const name = def.querySelector('.name');
         const parent = name.parentElement;
         const exampleText = parent.querySelector('.example-text');
-        exampleText.insertBefore(name, exampleText.firstChild);
+        if (exampleText) {
+            exampleText.insertBefore(name, exampleText.firstChild);
+        }
 
-        bundleNonDescription(def);
+        if (def) {
+            bundleNonDescription(def);
+        }
     });
 }
 

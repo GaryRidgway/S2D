@@ -174,7 +174,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="examples.js.html">examples.js</a>, <a href="examples.js.html#line1">line 1</a>
+        <a href="examples.js.html">examples.js</a>, <a href="examples.js.html#line7">line 7</a>
     </li></ul></dd>
     
 
@@ -192,19 +192,19 @@
     <h5>Example</h5>
     
     <pre class="prettyprint"><code>const E1GP1 = new S2D({
-    point: document.querySelector('.example-1 #grapple-point-11'),
-    moveTo: {
-        x: 50,
-        y: 50
-    },
-});
-const E1GP1Horizontal = document.querySelector('.example-1 + .stats .handle-1.horizontal + .value');
-const E1GP1Vertical = document.querySelector('.example-1 + .stats .handle-1.vertical + .value');
-E1GP1.setOnMoveFunction(function() {
-    const values = E1GP1.getValues();
-    E1GP1Horizontal.innerHTML = values.h+values.hSuffix;
-    E1GP1Vertical.innerHTML = values.v+values.vSuffix;
-}, true);</code></pre>
+        point: document.querySelector('.example-1 #grapple-point-11'),
+        moveTo: {
+            x: 50,
+            y: 50
+        },
+    });
+    const E1GP1Horizontal = document.querySelector('.example-1 + .stats .handle-1.horizontal + .value');
+    const E1GP1Vertical = document.querySelector('.example-1 + .stats .handle-1.vertical + .value');
+    E1GP1.setOnMoveFunction(function() {
+        const values = E1GP1.getValues();
+        E1GP1Horizontal.innerHTML = values.h+values.hSuffix;
+        E1GP1Vertical.innerHTML = values.v+values.vSuffix;
+    }, true);</code></pre>
 
 
 
@@ -271,7 +271,7 @@ E1GP1.setOnMoveFunction(function() {
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="examples.js.html">examples.js</a>, <a href="examples.js.html#line57">line 57</a>
+        <a href="examples.js.html">examples.js</a>, <a href="examples.js.html#line63">line 63</a>
     </li></ul></dd>
     
 
@@ -289,18 +289,18 @@ E1GP1.setOnMoveFunction(function() {
     <h5>Example</h5>
     
     <pre class="prettyprint"><code>const E2GP1 = new S2D({
-    point: document.querySelector('.example-2 #grapple-point-21'),
-    moveTo: {
-        x: 50,
-        y: 0
-    },
-    setMaskHandles: "rhl",
-});
-const E2GP1Horizontal = document.querySelector('.example-2 + .stats .handle-1.horizontal + .value');
-E2GP1.setOnMoveFunction(function() {
-    const values = E2GP1.getValues();
-    E2GP1Horizontal.innerHTML = values.h+values.hSuffix;
-}, true);</code></pre>
+        point: document.querySelector('.example-2 #grapple-point-21'),
+        moveTo: {
+            x: 50,
+            y: 0
+        },
+        setMaskHandles: "rhl",
+    });
+    const E2GP1Horizontal = document.querySelector('.example-2 + .stats .handle-1.horizontal + .value');
+    E2GP1.setOnMoveFunction(function() {
+        const values = E2GP1.getValues();
+        E2GP1Horizontal.innerHTML = values.h+values.hSuffix;
+    }, true);</code></pre>
 
 
 
@@ -368,7 +368,7 @@ E2GP1.setOnMoveFunction(function() {
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="examples.js.html">examples.js</a>, <a href="examples.js.html#line111">line 111</a>
+        <a href="examples.js.html">examples.js</a>, <a href="examples.js.html#line117">line 117</a>
     </li></ul></dd>
     
 
@@ -386,18 +386,18 @@ E2GP1.setOnMoveFunction(function() {
     <h5>Example</h5>
     
     <pre class="prettyprint"><code>const E3GP1 = new S2D({
-    point: document.querySelector('.example-3 #grapple-point-31'),
-    moveTo: {
-        x: 0,
-        y: 50
-    },
-    setMaskHandles: "thb",
-});
-const E3GP1Vertical = document.querySelector('.example-3 + .stats .handle-1.vertical + .value');
-E3GP1.setOnMoveFunction(function() {
-    const values = E3GP1.getValues();
-    E3GP1Vertical.innerHTML = values.v+values.vSuffix;
-}, true);</code></pre>
+        point: document.querySelector('.example-3 #grapple-point-31'),
+        moveTo: {
+            x: 0,
+            y: 50
+        },
+        setMaskHandles: "thb",
+    });
+    const E3GP1Vertical = document.querySelector('.example-3 + .stats .handle-1.vertical + .value');
+    E3GP1.setOnMoveFunction(function() {
+        const values = E3GP1.getValues();
+        E3GP1Vertical.innerHTML = values.v+values.vSuffix;
+    }, true);</code></pre>
 
 
 
@@ -470,7 +470,7 @@ E3GP1.setOnMoveFunction(function() {
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="examples.js.html">examples.js</a>, <a href="examples.js.html#line166">line 166</a>
+        <a href="examples.js.html">examples.js</a>, <a href="examples.js.html#line172">line 172</a>
     </li></ul></dd>
     
 
@@ -488,37 +488,37 @@ E3GP1.setOnMoveFunction(function() {
     <h5>Example</h5>
     
     <pre class="prettyprint"><code>const E4GP1 = new S2D({
-     point: document.querySelector('.example-4 #grapple-point-41'),
-     moveTo: {
-         x: 25,
-         y: 25
-     },
-     setMaskHandles: "r",
-     setLinks: "r-42"
- });
- const E4GP2 = new S2D({
-     point: document.querySelector('.example-4 #grapple-point-42'),
-     moveTo: {
-         x: 75,
-         y: 75
-     },
-     setMaskHandles: "l",
-     setLinks: "l-41"
- });
- const E4GP1Horizontal = document.querySelector('.example-4 + .stats .handle-1.horizontal + .value');
- const E4GP1Vertical = document.querySelector('.example-4 + .stats .handle-1.vertical + .value');
- const E4GP2Horizontal = document.querySelector('.example-4 + .stats .handle-2.horizontal + .value');
- const E4GP2Vertical = document.querySelector('.example-4 + .stats .handle-2.vertical + .value');
- E4GP1.setOnMoveFunction(function() {
-     const values = E4GP1.getValues();
-     E4GP1Horizontal.innerHTML = values.h+values.hSuffix;
-     E4GP1Vertical.innerHTML = values.v+values.vSuffix;
- }, true);
- E4GP2.setOnMoveFunction(function() {
-     const values = E4GP2.getValues();
-     E4GP2Horizontal.innerHTML = values.h+values.hSuffix;
-     E4GP2Vertical.innerHTML = values.v+values.vSuffix;
- }, true);</code></pre>
+        point: document.querySelector('.example-4 #grapple-point-41'),
+        moveTo: {
+            x: 25,
+            y: 25
+        },
+        setMaskHandles: "r",
+        setLinks: "r-42"
+    });
+    const E4GP2 = new S2D({
+        point: document.querySelector('.example-4 #grapple-point-42'),
+        moveTo: {
+            x: 75,
+            y: 75
+        },
+        setMaskHandles: "l",
+        setLinks: "l-41"
+    });
+    const E4GP1Horizontal = document.querySelector('.example-4 + .stats .handle-1.horizontal + .value');
+    const E4GP1Vertical = document.querySelector('.example-4 + .stats .handle-1.vertical + .value');
+    const E4GP2Horizontal = document.querySelector('.example-4 + .stats .handle-2.horizontal + .value');
+    const E4GP2Vertical = document.querySelector('.example-4 + .stats .handle-2.vertical + .value');
+    E4GP1.setOnMoveFunction(function() {
+        const values = E4GP1.getValues();
+        E4GP1Horizontal.innerHTML = values.h+values.hSuffix;
+        E4GP1Vertical.innerHTML = values.v+values.vSuffix;
+    }, true);
+    E4GP2.setOnMoveFunction(function() {
+        const values = E4GP2.getValues();
+        E4GP2Horizontal.innerHTML = values.h+values.hSuffix;
+        E4GP2Vertical.innerHTML = values.v+values.vSuffix;
+    }, true);</code></pre>
 
 
 
