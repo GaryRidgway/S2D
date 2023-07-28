@@ -74,7 +74,7 @@ function moveNames() {
  * 
  * @ignore
  */
-function bundleNonDescription(scope) {
+function bundleNonDescription(scope = document) {
     const definition = scope;
     const nodes = scope.querySelectorAll(':scope > *:not(.description)');
 
@@ -87,5 +87,15 @@ function bundleNonDescription(scope) {
     });
 }
 
+/**
+ * Remove home from sidebar;
+ * 
+ * @ignore
+ */
+function removeHome(scope = document) {
+    const sidebar = scope.querySelector('.sidebar header + h2').remove();
+}
+
 formatBlocks();
 moveNames();
+removeHome();

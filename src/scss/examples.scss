@@ -72,6 +72,8 @@
 
     & + section {
         background-color: unset;
+        margin-right: 0;
+        padding: 0px 2rem 12px;
 
         .container-overview {
             display: none;
@@ -87,7 +89,7 @@
         
         .definition {
             margin: 2rem 0rem;
-            border-radius: 6px;
+            border-radius: var(--borderRad);
             // background-color: var(--cardBG);
             // background: rgb(23,37,47);
             // background: linear-gradient(135deg, rgba(23,37,47,1) 0%, rgba(0,40,66,1) 40%, rgba(0,40,66,1) 60%, rgba(23,37,47,1) 100%);
@@ -116,7 +118,7 @@
         .example-content {
             padding: 2rem;
             background-color: var(--cardBG);
-            border-radius: 6px;
+            border-radius: var(--borderRad);
             border-top-left-radius: 0px;
             border-top-right-radius: 0px;
             box-shadow:  var(--shadow-elevation-medium);

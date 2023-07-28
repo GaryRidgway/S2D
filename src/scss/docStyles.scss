@@ -1,35 +1,3 @@
-:root {
-
-    --MainBG: #1f9aff;
-    --MainBGGrad: linear-gradient(
-        315deg,
-        #1f9aff 0%,
-        #2d72fd
-    );
-    --cardBG: #101519;
-    --shadow-color: 210deg 96% 31%;
-    --shadow-elevation-low:
-      0.5px 0.5px 0.8px hsl(var(--shadow-color) / 0.34),
-      0.8px 0.8px 1.3px -1.2px hsl(var(--shadow-color) / 0.34),
-      2px 1.9px 3.1px -2.5px hsl(var(--shadow-color) / 0.34);
-    --shadow-elevation-medium:
-      0.5px 0.5px 0.8px hsl(var(--shadow-color) / 0.36),
-      1.7px 1.6px 2.6px -0.8px hsl(var(--shadow-color) / 0.36),
-      4.1px 4px 6.4px -1.7px hsl(var(--shadow-color) / 0.36),
-      10.1px 9.7px 15.8px -2.5px hsl(var(--shadow-color) / 0.36);
-    --shadow-elevation-high:
-      0.5px 0.5px 0.8px hsl(var(--shadow-color) / 0.34),
-      2.9px 2.8px 4.5px -0.4px hsl(var(--shadow-color) / 0.34),
-      5.5px 5.3px 8.6px -0.7px hsl(var(--shadow-color) / 0.34),
-      9px 8.7px 14.1px -1.1px hsl(var(--shadow-color) / 0.34),
-      14.4px 13.8px 22.4px -1.4px hsl(var(--shadow-color) / 0.34),
-      22.6px 21.6px 35.2px -1.8px hsl(var(--shadow-color) / 0.34),
-      34.3px 32.9px 53.5px -2.1px hsl(var(--shadow-color) / 0.34),
-      50.5px 48.4px 78.7px -2.5px hsl(var(--shadow-color) / 0.34);
-
-    --cardColor: #ffffff;
-}
-
 html {
     background: var(--MainBG);
 }
@@ -39,6 +7,8 @@ body {
     background-color: unset;
     // background: var(--MainBGGrad);
     color: var(--cardColor);
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
 .nav-header {
@@ -47,6 +17,19 @@ body {
     h1 {
         margin-left: 0;
     }
+}
+
+h1 {
+    color: hsl(0, 0%, 100%);
+}
+h2 {
+    color: hsl(0, 0%, 92%);
+}
+h3 {
+    color: hsl(0, 0%, 84%);
+}
+h4 {
+    color: hsl(0, 0%, 76%);
 }
 
 article {
@@ -64,7 +47,7 @@ article {
     pre.prettyprint {
         background: #efefef;;
         padding: 3em 3rem;
-        border-radius: 5px;
+        border-radius: var(--borderRad);
     }
     
     h4.name {
@@ -78,7 +61,7 @@ article {
             height: 4px;
             background: #ffc800;
             left: 0;
-            bottom: -1rem;
+            bottom: -0.3rem;
         }
     }
 }
@@ -88,17 +71,35 @@ article {
     padding: 0;
 }
 
+.page-title {
+    font-family: "Major Mono Display", monospace;
+    color: #fff;
+    margin: 28px;
+    background: var(--cardBG);
+    padding: 2rem;
+    border-radius: var(--borderRad);
+    box-shadow: var(--shadow-elevation-medium);
+}
+
 p {
     margin-bottom: 0;
 }
+section {
+    background-color: var(--cardBG);
+    box-shadow: var(--shadow-elevation-medium);
+    margin: 28px;
+    border-radius: var(--borderRad);
+}
 
 .definition {
+    position: relative;
+
     .details {
         margin: 0;
         display: flex;
         color: black;
         background: #efefef;
-        border-radius: 5px;
+        border-radius: var(--borderRad);
         padding: 3px 0px 7px;
         border-bottom-left-radius: 0;
         border-top-left-radius: 0;

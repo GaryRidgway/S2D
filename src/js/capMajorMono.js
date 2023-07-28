@@ -1,5 +1,5 @@
 window.onload = function(event) {
-    const MMs = document.querySelectorAll('h4, .stats .horizontal, .stats .vertical');
+    const MMs = document.querySelectorAll('h1, h2, h3, h4, .stats .horizontal, .stats .vertical');
     MMs.forEach(function(element) {
         elementMajorMonoCap(element);
     });
